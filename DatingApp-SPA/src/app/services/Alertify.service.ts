@@ -21,7 +21,6 @@ export class AlertifyService {
   }
 
   error(message: string) {
-    debugger;
     alertify.error(message);
   }
 
