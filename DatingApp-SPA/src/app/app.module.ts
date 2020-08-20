@@ -18,14 +18,17 @@ import { MemberListComponent } from './components/members/member-list/member-lis
 import { MessagesComponent } from './components/messages/messages.component';
 import { MemberCardComponent } from './components/members/member-card/member-card.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
+import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 
+import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
 import { MemberDetailResolver } from './resolvers/member-detail.resolver';
+import { MemberListResolver } from './resolvers/member-list.resolver';
+import { MemberEditResolver } from './resolvers/member-edit.resolver';
 
 import { appRoutes } from './app.routing';
-import { UserService } from './services/user.service';
-import { MemberListResolver } from './resolvers/member-list.resolver';
+import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { MemberListResolver } from './resolvers/member-list.resolver';
     MessagesComponent,
     MemberCardComponent,
     MemberDetailComponent,
+    MemberEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,8 @@ import { MemberListResolver } from './resolvers/member-list.resolver';
     UserService,
     MemberDetailResolver,
     MemberListResolver,
+    MemberEditResolver,
+    PreventUnsavedChangesGuard,
   ],
   bootstrap: [AppComponent],
 })
