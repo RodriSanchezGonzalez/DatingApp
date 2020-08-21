@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,6 +20,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { MemberCardComponent } from './components/members/member-card/member-card.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
+import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -42,6 +44,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     }),
     TabsModule.forRoot(),
     NgxGalleryModule,
+    FileUploadModule,
   ],
   providers: [
     AuthService,

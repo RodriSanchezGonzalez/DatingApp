@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  HostListener,
+  EventEmitter,
+} from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ActivatedRoute } from '@angular/router';
 import { AlertifyService } from 'src/app/services/Alertify.service';
@@ -21,6 +27,7 @@ export class MemberEditComponent implements OnInit {
   }
 
   user: User;
+  photoUrl: string;
 
   constructor(
     private router: ActivatedRoute,
@@ -33,6 +40,9 @@ export class MemberEditComponent implements OnInit {
     this.router.data.subscribe((data) => {
       this.user = data['user'];
     });
+    this.authService.currentPhotoUrl.subscribe(
+      (photoUrl) => (this.photoUrl = photoUrl)
+    );
   }
 
   updateUser() {
@@ -47,5 +57,9 @@ export class MemberEditComponent implements OnInit {
           this.alertify.error(error);
         }
       );
+  }
+
+  updateMainPhoto(photoUrl: string) {
+    this.user.photoUrl = photoUrl;
   }
 }
