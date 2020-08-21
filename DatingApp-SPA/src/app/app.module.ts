@@ -22,6 +22,7 @@ import { MemberCardComponent } from './components/members/member-card/member-car
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -66,6 +67,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     NgxGalleryModule,
     FileUploadModule,
     BsDatepickerModule.forRoot(),
+    TimeagoModule.forRoot(),
   ],
   providers: [
     AuthService,
