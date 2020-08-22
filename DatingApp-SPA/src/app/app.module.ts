@@ -32,6 +32,7 @@ import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
 import { MemberDetailResolver } from './resolvers/member-detail.resolver';
 import { MemberListResolver } from './resolvers/member-list.resolver';
 import { MemberEditResolver } from './resolvers/member-edit.resolver';
+import { ListResolver } from './resolvers/list.resolver';
 
 import { appRoutes } from './app.routing';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
@@ -81,6 +82,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     MemberListResolver,
     MemberEditResolver,
     PreventUnsavedChangesGuard,
+    ListResolver,
   ],
   bootstrap: [AppComponent],
 })
