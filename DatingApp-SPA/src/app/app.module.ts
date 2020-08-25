@@ -12,6 +12,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,8 +24,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { MemberCardComponent } from './components/members/member-card/member-card.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
+import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
-import { TimeagoModule } from 'ngx-timeago';
 
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -33,6 +34,7 @@ import { MemberDetailResolver } from './resolvers/member-detail.resolver';
 import { MemberListResolver } from './resolvers/member-list.resolver';
 import { MemberEditResolver } from './resolvers/member-edit.resolver';
 import { ListResolver } from './resolvers/list.resolver';
+import { MessagesResolver } from './resolvers/messages.resolver';
 
 import { appRoutes } from './app.routing';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.guard';
@@ -50,6 +52,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    MemberMessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +86,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     MemberEditResolver,
     PreventUnsavedChangesGuard,
     ListResolver,
+    MessagesResolver,
   ],
   bootstrap: [AppComponent],
 })
