@@ -13,6 +13,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -26,7 +27,14 @@ import { MemberDetailComponent } from './components/members/member-detail/member
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
+import { PhotoManagmentComponent } from './components/admin/photo-managment/photo-managment.component';
+import { UserManagmentComponent } from './components/admin/user-managment/user-managment.component';
+import { RolesModalComponent } from './components/admin/roles-modal/roles-modal.component';
 
+import { HasRoleDirective } from './directives/hasRole.directive';
+
+import { AdminService } from './services/admin.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
@@ -53,6 +61,11 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     MemberEditComponent,
     PhotoEditorComponent,
     MemberMessagesComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    PhotoManagmentComponent,
+    UserManagmentComponent,
+    RolesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +89,7 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     TimeagoModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [
     AuthService,
@@ -87,7 +101,9 @@ import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes.gua
     PreventUnsavedChangesGuard,
     ListResolver,
     MessagesResolver,
+    AdminService,
   ],
+  entryComponents: [RolesModalComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
